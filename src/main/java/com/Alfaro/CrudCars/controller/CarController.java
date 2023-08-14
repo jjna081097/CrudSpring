@@ -100,7 +100,8 @@ public class CarController {
     public ResponseEntity<Object> updateCarBrand(@RequestParam Long id, @RequestBody Car car) {
         PatchApiResponse apr = new PatchApiResponse();
         this.carService.updateCarBrand(id, car);
-        apr.setMessage(car.getCarBrand() + car.getCarModel() + " successfully updated.");
+        // code changes
+        apr.setMessage(car.getCarBrand() + car.getCarModel() + " successfully updated."); //changes update
         apr.setStatus(true);
         apr.setCarBrand(car.getCarBrand());
         return ResponseEntity.status(HttpStatus.OK).body(apr);
